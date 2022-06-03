@@ -1,7 +1,68 @@
-{
-    margin: 0;
-    padding: 0;
+#home {
+    clip-path: url(#cache);
 }
+
+#red {
+    fill: none;
+    opacity: 0.15;
+    stroke: #CE1B5F;
+    stroke-width: 12;
+    stroke-miterlimit: 10;
+    animation: show 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+#blue {
+    fill: none;
+    opacity: 0.15;
+    stroke: #06A1C4;
+    stroke-width: 12;
+    stroke-miterlimit: 10;
+    animation: show 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+#light-blue {
+    fill: none;
+    opacity: 0.15;
+    stroke: #06A1C4;
+    stroke-width: 6;
+    stroke-miterlimit: 10;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 800;
+    animation: draw 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes show {
+    0% {
+        opacity: 0.15;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+
+    100% {
+        opacity: 0.15;
+    }
+}
+
+
+
+
 
 html,
 body {
@@ -16,6 +77,8 @@ body {
 
 .content {
     flex: 1 0 auto;
+    position: absolute;
+    width: 100%;
 }
 
 .footer {
@@ -71,10 +134,19 @@ a {
     background: cornflowerblue;
     box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
     border-radius: 10px;
-    font-weight: 500px; 
+    font-weight: 500px;
     font-size: 16px;
     line-height: 26px;
     text-align: center;
     color: #ADFF2F;
     text-transform: uppercase;
 }
+
+.forma {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+background-repeat: repeat-y;

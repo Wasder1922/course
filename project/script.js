@@ -16,16 +16,27 @@ function guess() {
 
 function reminder() {
     alert("Ты здесь слишком долго!");
-    //window.close();
+    window.close();
 }
-
-//setTimeout(reminder, 3000);
+//setTimeout(reminder, 60000);
 
 
 function valideForm() {
     alert("ПРОВЕРКА ФОРМЫ!");
     var name = document.getElementById("name").value;
-    console.log(name);
+    var password = document.getElementById("password").value;
+    //console.log(name);
+    //console.log(password);
+    var reg_name = /^[а-яa-zё]+$/i;
+    var reg_password = /^[a-z0-9]{5,100}$/i;
+    
+    if (reg_name.test(name) == false) {
+        alert("Ошибка поля ФИО")
+    }
+    
+    if (reg_password.test(password) == false) {
+        alert("Ошибка поля Пароль")
+    }
 }
 
 document.querySelector(".button").addEventListener("click", valideForm);
